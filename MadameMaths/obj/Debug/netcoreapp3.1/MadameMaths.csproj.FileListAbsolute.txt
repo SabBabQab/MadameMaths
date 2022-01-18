@@ -1,0 +1,13 @@
+/Users/sabeenqureshi/Projects/MadameMaths/MadameMaths/bin/Debug/netcoreapp3.1/MadameMaths.deps.json
+/Users/sabeenqureshi/Projects/MadameMaths/MadameMaths/bin/Debug/netcoreapp3.1/MadameMaths.runtimeconfig.json
+/Users/sabeenqureshi/Projects/MadameMaths/MadameMaths/bin/Debug/netcoreapp3.1/MadameMaths.runtimeconfig.dev.json
+/Users/sabeenqureshi/Projects/MadameMaths/MadameMaths/bin/Debug/netcoreapp3.1/MadameMaths.dll
+/Users/sabeenqureshi/Projects/MadameMaths/MadameMaths/bin/Debug/netcoreapp3.1/MadameMaths.pdb
+/Users/sabeenqureshi/Projects/MadameMaths/MadameMaths/obj/Debug/netcoreapp3.1/MadameMaths.csproj.AssemblyReference.cache
+/Users/sabeenqureshi/Projects/MadameMaths/MadameMaths/obj/Debug/netcoreapp3.1/MadameMaths.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sabeenqureshi/Projects/MadameMaths/MadameMaths/obj/Debug/netcoreapp3.1/MadameMaths.AssemblyInfoInputs.cache
+/Users/sabeenqureshi/Projects/MadameMaths/MadameMaths/obj/Debug/netcoreapp3.1/MadameMaths.AssemblyInfo.cs
+/Users/sabeenqureshi/Projects/MadameMaths/MadameMaths/obj/Debug/netcoreapp3.1/MadameMaths.csproj.CoreCompileInputs.cache
+/Users/sabeenqureshi/Projects/MadameMaths/MadameMaths/obj/Debug/netcoreapp3.1/MadameMaths.dll
+/Users/sabeenqureshi/Projects/MadameMaths/MadameMaths/obj/Debug/netcoreapp3.1/MadameMaths.pdb
+/Users/sabeenqureshi/Projects/MadameMaths/MadameMaths/obj/Debug/netcoreapp3.1/MadameMaths.genruntimeconfig.cache
