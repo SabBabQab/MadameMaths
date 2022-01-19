@@ -76,6 +76,8 @@ namespace MadameMaths
 
             int score = 0;
 
+            Console.WriteLine("Welcome to MadameMaths. Are you ready to do some MATHS?");
+
             for (int q = 1; q < 6; q++)
             {
                 Random random = new Random();
@@ -89,7 +91,7 @@ namespace MadameMaths
 
                 
 
-                Console.WriteLine($"Let's start! What's {randomNumber} {userOp} {otherRandomNumber}?");
+                Console.WriteLine($"What's {randomNumber} {userOp} {otherRandomNumber}?");
                 string answer = Console.ReadLine();
                 double danswer;
                 double.TryParse(answer, out danswer);
@@ -108,7 +110,7 @@ namespace MadameMaths
                         correctAnswer = randomNumber * otherRandomNumber;
                         break;
                     case "/":
-                        correctAnswer = Math.Round(randomNumber / otherRandomNumber);
+                        correctAnswer = Math.Round(randomNumber / otherRandomNumber, 0, MidpointRounding.AwayFromZero);
                         break;
                     default:
                         throw new Exception("Operator not recognised.");
