@@ -78,7 +78,15 @@ namespace MadameMaths
 
             Console.WriteLine("Welcome to MadameMaths. Are you ready to do some MATHS?");
 
-            for (int q = 1; q < 6; q++)
+            Console.WriteLine("How many questions do you want(or have) to answer today?");
+            string questionString = Console.ReadLine();
+            int questionNumber;
+            int.TryParse(questionString, out questionNumber);
+            int questionNumber2 = questionNumber + 1;
+
+            Console.Write("Great! Your first question is: ");
+
+            for (int q = 1; q < questionNumber2; q++)
             {
                 Random random = new Random();
                 double randomNumber = random.Next(1, 11);
@@ -126,7 +134,7 @@ namespace MadameMaths
                 }
             }
 
-            Console.WriteLine($"Your score is {score}/5");
+            Console.WriteLine($"Your score is {score}/{questionNumber}");
         }
     }
 }
