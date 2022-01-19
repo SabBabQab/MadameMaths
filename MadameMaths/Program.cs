@@ -6,134 +6,218 @@ namespace MadameMaths
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Welcome to MadameMaths. Are you ready to do some MATHS?");
-
-            //Random random = new Random();
-            //int randomNumber1 = random.Next(1, 11);
-            //int otherRandomNumber1 = random.Next(1, 11);
-
-            //int score = 0;
-
-            //Console.WriteLine($"Let's start! What's {randomNumber} + {randomNumber}?");
-            //string answer1 = Console.ReadLine();
-            //double danswer1;
-            //double.TryParse(answer1, out danswer1);
-            //if (danswer1 == randomNumber + randomNumber)
-            //{
-            //    Console.WriteLine("CORRECT!");
-            //    score++;
-            //}
-            //else
-            //{
-            //    Console.WriteLine($"1+1 isn't {answer1}. It's 2!");
-            //}
-            //Console.WriteLine("OK! 3 x 3");
-            //string answer2 = Console.ReadLine();
-            //if (answer2 == "9")
-            //{
-            //    Console.WriteLine("Awesome!");
-            //    score++;
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Oh dear! The answer is 9! Never mind, keep trying.");
-            //}
-            //Console.WriteLine("100 ÷ 5");
-            //string answer3 = Console.ReadLine();
-            //if (answer3 == "20")
-            //{
-            //    Console.WriteLine("Brilliant!");
-            //    score++;
-            //}
-            //else
-            //{
-            //    Console.WriteLine("WRONG. Your answer should be 20!");
-            //}
-            //Console.WriteLine("Let's move on. If 5𝑥 + 10 = 50, what is 𝑥?");
-            //string answer4 = Console.ReadLine();
-            //if (answer4 == "8")
-            //{
-            //    Console.WriteLine("Yayyy! You really know your maths! But watch out, the next question is haaard.");
-            //    score++;
-            //}
-            //else
-            //{
-            //    Console.WriteLine($"𝑥 would not equal {answer4}. 𝑥 would equal 8.");
-            //}
-            //Console.WriteLine("How many πs is the area of a circle with a radius of 5?");
-            //string answer5 = Console.ReadLine();
-            //if (answer5 == "25")
-            //{
-            //    Console.WriteLine("Oh my goodness, you are right! Are you awesome or what?");
-            //    score++;
-            //}
-            //else
-            //{
-            //    Console.WriteLine("The formula for the area of a circle is πr². Thus the area is 25π");
-            //}
-
-            //Console.WriteLine($"Your score is {score}/5");
+            
 
             int score = 0;
 
+            double randomNumber;
+            double otherRandomNumber;
+
             Console.WriteLine("Welcome to MadameMaths. Are you ready to do some MATHS?");
+
+            Console.WriteLine("Which level? Begginer, Intermediate or Professional");
+
+            string level = Console.ReadLine();
 
             Console.WriteLine("How many questions do you want(or have) to answer today?");
             string questionString = Console.ReadLine();
             int questionNumber;
             int.TryParse(questionString, out questionNumber);
 
-            Console.Write("Great! Your first question is: ");
+            
 
-            for (int q = 1; q < questionNumber + 1 ; q++)
+
+            if (level == "Begginer")
+            { 
+                for (int q = 1; q < questionNumber + 1; q++)
+                {
+                    Random random = new Random();
+                    string[] operators = { "+", "-", "*" };
+                    string[] userOperators = { "+", "-", "x" };
+                    int randomOperator = random.Next(0, 3);
+                    string op = operators[randomOperator];
+                    string userOp = userOperators[randomOperator];
+
+
+                    if (op == "+" || op == "-")
+                    {
+                        randomNumber = random.Next(0, 100);
+                        otherRandomNumber = random.Next(0, 100);
+                    }
+                    else
+                    {
+                        randomNumber = random.Next(1, 13);
+                        otherRandomNumber = random.Next(1, 13);
+                    }
+
+                    Console.WriteLine($"What's {randomNumber} {userOp} {otherRandomNumber}?");
+                    string answer = Console.ReadLine();
+                    double danswer;
+                    double.TryParse(answer, out danswer);
+
+                    double correctAnswer;
+
+                    switch (op)
+                    {
+                        case "+":
+                            correctAnswer = randomNumber + otherRandomNumber;
+                            break;
+                        case "-":
+                            correctAnswer = randomNumber - otherRandomNumber;
+                            break;
+                        case "*":
+                            correctAnswer = randomNumber * otherRandomNumber;
+                            break;
+                        default:
+                            throw new Exception("Operator not recognised.");
+                    }
+                    if (danswer == correctAnswer)
+                    {
+                        Console.WriteLine("CORRECT!");
+                        score++;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"WRONG! The answer is {correctAnswer}");
+                    }
+                }
+
+                Console.WriteLine($"Your score is {score}/{questionNumber}");
+            }
+            if (level == "Intermediate")
             {
-                Random random = new Random();
-                double randomNumber = random.Next(1, 11);
-                double otherRandomNumber = random.Next(1, 11);
-                string [] operators = { "+", "-", "*", "/" };
-                string[] userOperators = { "+", "-", "x", "÷" };
-                int randomOperator = random.Next(1, 4);
-                string op = operators[randomOperator];
-                string userOp = userOperators[randomOperator];
-
-                
-
-                Console.WriteLine($"What's {randomNumber} {userOp} {otherRandomNumber}?");
-                string answer = Console.ReadLine();
-                double danswer;
-                double.TryParse(answer, out danswer);
-
-                double correctAnswer;
-
-                switch(op)
+                for (int q = 1; q < questionNumber + 1; q++)
                 {
-                    case "+":
-                        correctAnswer = randomNumber + otherRandomNumber;
-                        break;
-                    case "-":
-                        correctAnswer = randomNumber - otherRandomNumber;
-                        break;
-                    case "*":
-                        correctAnswer = randomNumber * otherRandomNumber;
-                        break;
-                    case "/":
-                        correctAnswer = Math.Round(randomNumber / otherRandomNumber, 0, MidpointRounding.AwayFromZero);
-                        break;
-                    default:
-                        throw new Exception("Operator not recognised.");
+                    Random random = new Random();
+                    string[] operators = { "+", "-", "*", "/" };
+                    string[] userOperators = { "+", "-", "x", "÷" };
+                    int randomOperator = random.Next(0, 4);
+                    string op = operators[randomOperator];
+                    string userOp = userOperators[randomOperator];
+
+
+                    if (op == "+" || op == "-")
+                    {
+                        randomNumber = random.Next(0, 1000);
+                        otherRandomNumber = random.Next(0, 1000);
+                    }
+                    else if (op == "*")
+                    {
+                        randomNumber = random.Next(10, 51);
+                        otherRandomNumber = random.Next(10, 51);
+                    }
+                    else
+                    {
+                        randomNumber = random.Next(10, 51);
+                        int randomInt = Convert.ToInt32(randomNumber);
+                        otherRandomNumber = random.Next(10, randomInt + 1);
+                    }
+
+                    Console.WriteLine($"What's {randomNumber} {userOp} {otherRandomNumber}?");
+                    string answer = Console.ReadLine();
+                    double danswer;
+                    double.TryParse(answer, out danswer);
+
+                    double correctAnswer;
+
+                    switch (op)
+                    {
+                        case "+":
+                            correctAnswer = randomNumber + otherRandomNumber;
+                            break;
+                        case "-":
+                            correctAnswer = randomNumber - otherRandomNumber;
+                            break;
+                        case "*":
+                            correctAnswer = randomNumber * otherRandomNumber;
+                            break;
+                        case "/":
+                            correctAnswer = Math.Round(randomNumber / otherRandomNumber, 0, MidpointRounding.AwayFromZero);
+                            break;
+                        default:
+                            throw new Exception("Operator not recognised.");
+                    }
+                    if (danswer == correctAnswer)
+                    {
+                        Console.WriteLine("CORRECT!");
+                        score++;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"WRONG! The answer is {correctAnswer}");
+                    }
                 }
-                if (danswer == correctAnswer)
-                {
-                    Console.WriteLine("CORRECT!");
-                    score++;
-                }
-                else
-                {
-                    Console.WriteLine($"WRONG! The answer is {correctAnswer}");
-                }
+
+                Console.WriteLine($"Your score is {score}/{questionNumber}");
             }
 
-            Console.WriteLine($"Your score is {score}/{questionNumber}");
+            if (level == "Professional")
+            {
+                for (int q = 1; q < questionNumber + 1; q++)
+                {
+                    Random random = new Random();
+                    string[] operators = { "+", "-", "*", "/" };
+                    string[] userOperators = { "+", "-", "x", "÷" };
+                    int randomOperator = random.Next(0, 4);
+                    string op = operators[randomOperator];
+                    string userOp = userOperators[randomOperator];
+
+                    if (op == "+" || op == "-")
+                    {
+                        randomNumber = random.Next(0, 1000);
+                        otherRandomNumber = random.Next(0, 1000);
+                    }
+                    else if (op == "*")
+                    {
+                        randomNumber = random.Next(20, 1000);
+                        otherRandomNumber = random.Next(20, 1000);
+                    }
+                    else
+                    {
+                        randomNumber = random.Next(20, 1000);
+                        int randomInt = Convert.ToInt32(randomNumber);
+                        otherRandomNumber = random.Next(20, randomInt + 1);
+                    }
+
+                    Console.WriteLine($"What's {randomNumber} {userOp} {otherRandomNumber}?");
+                    string answer = Console.ReadLine();
+                    double danswer;
+                    double.TryParse(answer, out danswer);
+
+                    double correctAnswer;
+
+                    switch (op)
+                    {
+                        case "+":
+                            correctAnswer = randomNumber + otherRandomNumber;
+                            break;
+                        case "-":
+                            correctAnswer = randomNumber - otherRandomNumber;
+                            break;
+                        case "*":
+                            correctAnswer = randomNumber * otherRandomNumber;
+                            break;
+                        case "/":
+                            correctAnswer = Math.Round(randomNumber / otherRandomNumber, 0, MidpointRounding.AwayFromZero);
+                            break;
+                        default:
+                            throw new Exception("Operator not recognised.");
+                    }
+                    if (danswer == correctAnswer)
+                    {
+                        Console.WriteLine("CORRECT!");
+                        score++;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"WRONG! The answer is {correctAnswer}");
+                    }
+                }
+
+                Console.WriteLine($"Your score is {score}/{questionNumber}");
+            }
+
         }
+            
     }
 }
