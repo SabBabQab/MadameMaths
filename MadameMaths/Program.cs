@@ -82,11 +82,10 @@ namespace MadameMaths
             string questionString = Console.ReadLine();
             int questionNumber;
             int.TryParse(questionString, out questionNumber);
-            int questionNumber2 = questionNumber + 1;
 
             Console.Write("Great! Your first question is: ");
 
-            for (int q = 1; q < questionNumber2; q++)
+            for (int q = 1; q < questionNumber + 1 ; q++)
             {
                 Random random = new Random();
                 double randomNumber = random.Next(1, 11);
