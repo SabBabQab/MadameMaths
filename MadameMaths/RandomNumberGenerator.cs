@@ -3,27 +3,27 @@ namespace MadameMaths
 {
     public static class RandomNumberGenerator
     {
-        public static (double, double) GenerateNumber(string op, int multiplyDivMin, int multiplyDivMax, int minusAddMin, int minusAddMax, Random random)
+        public static (double, double) GenerateNumber(string operatorSymbol, int multiplyDivMin, int multiplyDivMax, int minusAddMin, int minusAddMax, Random random)
         {
-            double randomNumber;
-            double otherRandomNumber;
-            if (op == "+" || op == "-")
+            double randomNumber1;
+            double randomNumber2;
+            if (operatorSymbol == "+" || operatorSymbol == "-")
             {
-                randomNumber = random.Next(minusAddMin, minusAddMax);
-                otherRandomNumber = random.Next(minusAddMin, minusAddMax);
+                randomNumber1 = random.Next(minusAddMin, minusAddMax);
+                randomNumber2 = random.Next(minusAddMin, minusAddMax);
             }
-            else if (op == "*")
+            else if (operatorSymbol == "*")
             {
-                randomNumber = random.Next(multiplyDivMin, multiplyDivMax);
-                otherRandomNumber = random.Next(multiplyDivMin, multiplyDivMax);
+                randomNumber1 = random.Next(multiplyDivMin, multiplyDivMax);
+                randomNumber2 = random.Next(multiplyDivMin, multiplyDivMax);
             }
             else
             {
-                randomNumber = random.Next(multiplyDivMin, multiplyDivMax);
-                int randomInt = Convert.ToInt32(randomNumber);
-                otherRandomNumber = random.Next(multiplyDivMin, randomInt + 1);
+                randomNumber1 = random.Next(multiplyDivMin, multiplyDivMax);
+                int randomInt1 = Convert.ToInt32(randomNumber1);
+                randomNumber2 = random.Next(multiplyDivMin, randomInt1 + 1);
             }
-            return (randomNumber, otherRandomNumber);
+            return (randomNumber1, randomNumber2);
         }
     }
 }

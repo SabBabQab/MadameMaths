@@ -1,11 +1,11 @@
 ﻿using System;
 namespace MadameMaths
 {
-    public static class GiveSolution
+    public static class CheckUserAnswer
     {
-        public static int WrongOrRight(double correctAnswer, double danswer, int score)
+        public static int CheckingUserAnswer(double correctAnswer, double finalAnswer, int score)
         {
-            if (danswer == correctAnswer)
+            if (finalAnswer == correctAnswer)
             {
                 Console.WriteLine("CORRECT!");
                 score++;
@@ -14,7 +14,6 @@ namespace MadameMaths
             {
                 Console.WriteLine($"WRONG! The answer is {correctAnswer}");
             }
-
             return score;
         }
     }

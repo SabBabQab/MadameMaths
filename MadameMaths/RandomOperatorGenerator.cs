@@ -3,14 +3,14 @@ namespace MadameMaths
 {
     public static class RandomOperatorGenerator
     {
-        public static (string, string) GetOperator(Random random, int untilOperatorNumber)
+        public static (string, string) GetOperator(Random random, int numberOfOperators)
         {
             string[] operators = { "+", "-", "*", "/" };
             string[] userOperators = { "+", "-", "x", "÷" };
-            int randomOperator = random.Next(0, untilOperatorNumber);
-            string op = operators[randomOperator];
-            string userOp = userOperators[randomOperator];
-            return (op, userOp);
+            int randomOperatorPosition = random.Next(0, numberOfOperators);
+            string operatorSymbol = operators[randomOperatorPosition];
+            string userOperatorSymbol = userOperators[randomOperatorPosition];
+            return (operatorSymbol, userOperatorSymbol);
         }
     }
 }
