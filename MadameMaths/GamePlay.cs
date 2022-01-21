@@ -14,9 +14,9 @@ namespace MadameMaths
                     (string operatorSymbol, string userOperatorSymbol) = RandomOperatorGenerator.GetOperator(random, 3);
 
                     (double randomNumber1, double randomNumber2) = RandomNumberGenerator.GenerateNumber(operatorSymbol, 10, 51, 0, 1000, random);
-                    double finalAnswer = UserAnswer.GettingUserAnswer(randomNumber1, userOperatorSymbol, randomNumber2);
-                    double correctAnswer = CorrectAnswer.GettingCorrectAnswer(randomNumber1, operatorSymbol, randomNumber2);
-                    score = UserAnswer.CheckingUserAnswer(correctAnswer, finalAnswer, score);
+                    double finalAnswer = UserAnswer.GetUserAnswer(randomNumber1, userOperatorSymbol, randomNumber2);
+                    double correctAnswer = CorrectAnswer.GetCorrectAnswer(randomNumber1, operatorSymbol, randomNumber2);
+                    score = UserAnswer.CheckUserAnswer(correctAnswer, finalAnswer, score);
                 }
             }
             else if (difficulty == "Intermediate")
@@ -26,9 +26,9 @@ namespace MadameMaths
                     (string operatorSymbol, string userOperatorSymbol) = RandomOperatorGenerator.GetOperator(random, 4);
 
                     (double randomNumber1, double randomNumber2) = RandomNumberGenerator.GenerateNumber(operatorSymbol, 10, 51, 0, 1000, random);
-                    double finalAnswer = UserAnswer.GettingUserAnswer(randomNumber1, userOperatorSymbol, randomNumber2);
-                    double correctAnswer = CorrectAnswer.GettingCorrectAnswer(randomNumber1, operatorSymbol, randomNumber2);
-                    score = UserAnswer.CheckingUserAnswer(correctAnswer, finalAnswer, score);
+                    double finalAnswer = UserAnswer.GetUserAnswer(randomNumber1, userOperatorSymbol, randomNumber2);
+                    double correctAnswer = CorrectAnswer.GetCorrectAnswer(randomNumber1, operatorSymbol, randomNumber2);
+                    score = UserAnswer.CheckUserAnswer(correctAnswer, finalAnswer, score);
 
                 }
             }
@@ -39,9 +39,9 @@ namespace MadameMaths
                     (string operatorSymbol, string userOperatorSymbol) = RandomOperatorGenerator.GetOperator(random, 4);
 
                     (double randomNumber1, double randomNumber2) = RandomNumberGenerator.GenerateNumber(operatorSymbol, 20, 1000, 0, 1000, random);
-                    double finalAnswer = UserAnswer.GettingUserAnswer(randomNumber1, userOperatorSymbol, randomNumber2);
-                    double correctAnswer = CorrectAnswer.GettingCorrectAnswer(randomNumber1, operatorSymbol, randomNumber2);
-                    score = UserAnswer.CheckingUserAnswer(correctAnswer, finalAnswer, score);
+                    double finalAnswer = UserAnswer.GetUserAnswer(randomNumber1, userOperatorSymbol, randomNumber2);
+                    double correctAnswer = CorrectAnswer.GetCorrectAnswer(randomNumber1, operatorSymbol, randomNumber2);
+                    score = UserAnswer.CheckUserAnswer(correctAnswer, finalAnswer, score);
                 }
             }
             return score;

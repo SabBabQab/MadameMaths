@@ -3,7 +3,7 @@ namespace MadameMaths
 {
     public static class CorrectAnswer
     {
-        public static double GettingCorrectAnswer(double randomNumber1, string operatorSymbol, double randomNumber2)
+        public static double GetCorrectAnswer(double randomNumber1, string operatorSymbol, double randomNumber2)
         {
             double correctAnswer;
             switch (operatorSymbol)
