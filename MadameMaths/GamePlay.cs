@@ -16,7 +16,7 @@ namespace MadameMaths
                     (double randomNumber1, double randomNumber2) = RandomNumberGenerator.GenerateNumber(operatorSymbol, 10, 51, 0, 1000, random);
                     double finalAnswer = UserAnswer.GettingUserAnswer(randomNumber1, userOperatorSymbol, randomNumber2);
                     double correctAnswer = CorrectAnswer.GettingCorrectAnswer(randomNumber1, operatorSymbol, randomNumber2);
-                    score = CheckUserAnswer.CheckingUserAnswer(correctAnswer, finalAnswer, score);
+                    score = UserAnswer.CheckingUserAnswer(correctAnswer, finalAnswer, score);
                 }
             }
             else if (difficulty == "Intermediate")
@@ -28,7 +28,7 @@ namespace MadameMaths
                     (double randomNumber1, double randomNumber2) = RandomNumberGenerator.GenerateNumber(operatorSymbol, 10, 51, 0, 1000, random);
                     double finalAnswer = UserAnswer.GettingUserAnswer(randomNumber1, userOperatorSymbol, randomNumber2);
                     double correctAnswer = CorrectAnswer.GettingCorrectAnswer(randomNumber1, operatorSymbol, randomNumber2);
-                    score = CheckUserAnswer.CheckingUserAnswer(correctAnswer, finalAnswer, score);
+                    score = UserAnswer.CheckingUserAnswer(correctAnswer, finalAnswer, score);
 
                 }
             }
@@ -41,7 +41,7 @@ namespace MadameMaths
                     (double randomNumber1, double randomNumber2) = RandomNumberGenerator.GenerateNumber(operatorSymbol, 20, 1000, 0, 1000, random);
                     double finalAnswer = UserAnswer.GettingUserAnswer(randomNumber1, userOperatorSymbol, randomNumber2);
                     double correctAnswer = CorrectAnswer.GettingCorrectAnswer(randomNumber1, operatorSymbol, randomNumber2);
-                    score = CheckUserAnswer.CheckingUserAnswer(correctAnswer, finalAnswer, score);
+                    score = UserAnswer.CheckingUserAnswer(correctAnswer, finalAnswer, score);
                 }
             }
             return score;
